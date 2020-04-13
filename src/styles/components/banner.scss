@@ -1,0 +1,81 @@
+.main {
+    height: 70vh; // for browsers that support viewport height
+    height: calc(var(--vh, 1vh) * 60);
+    background-color: $grey;
+    .row {
+        flex-direction: column;
+        justify-content: center;
+        
+        h2 {
+            margin: 150px 0 8px;
+            width: 100%;
+            font-size: 54px;
+            font-weight: 700;
+            z-index: 10;
+            color: $white;
+            opacity: 0.8;
+            // mix-blend-mode: difference;
+            
+            @include media('<=tablet') {
+                font-size: 24px;
+                line-height: 32px;
+            }
+            @include media('<=phone') {
+                margin-top: 45px;
+                font-size: 22px;
+                line-height: 30px;
+            }
+            .line {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+
+                @include media('<=tablet') {
+                    height: 48px;
+                }
+                @include media('<=phone') {
+                    height: 32px;
+                }
+            }
+        }
+
+        .bottom-copy {
+            width: 100%;
+            margin: 0 0 120px;
+            @include media('<=phone') {
+                margin-bottom: 0px;
+            }
+            .divider {
+                width: 40%;
+                margin: 0 auto;
+                hr {
+                    border: 1px solid $red;
+                    width: 20%;
+                }
+            }
+            h5 {
+                margin: 0 auto;
+                padding-top: 50px;
+                width: 50%;
+                .line {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    
+                    span {
+                        text-align: center;
+                        color: $white;
+                        mix-blend-mode: difference;
+                        font-size: 18px;
+                        font-weight: 300;
+                        opacity: 0.4;
+                        @include media('<=tablet') {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
